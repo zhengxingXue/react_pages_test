@@ -1,4 +1,5 @@
 import './App.css';
+import Heading from './components/Heading';
 
 const currentDate = new Date();
 const year = currentDate.getFullYear();
@@ -11,7 +12,7 @@ const k8sLogoURL =
 const App = () => {
   return (
     <div className='App'>
-      <h1>Hello World</h1>
+      <Heading />
       <img className='App-tech-img' src={dockerLogoURL} alt='docker logo' />
       <img className='App-tech-img' src={k8sLogoURL} alt='k8s logo' />
       <p>&copy; {year}, Zhengxing Xue</p>
