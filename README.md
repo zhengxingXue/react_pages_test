@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# React Pages Test
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Deployments
+
+- [Github Pages](https://zhengxingxue.github.io/react_pages_test/)
+- [AWS Elastic Beanstalk](http://reactpagestest-env.eba-wta3gvc2.us-east-1.elasticbeanstalk.com/)
 
 ## Available Scripts
 
