@@ -3,7 +3,7 @@ import { Container, Typography } from '@mui/material';
 import { Box } from '@mui/material';
 import Copyright from './components/Copyright';
 
-export default function App() {
+function App() {
   return (
     <Container maxWidth='sm'>
       <Box sx={{ my: 4 }}>
@@ -15,3 +15,5 @@ export default function App() {
     </Container>
   );
 }
+
+export default App;
