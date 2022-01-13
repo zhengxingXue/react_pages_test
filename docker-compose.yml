@@ -20,9 +20,9 @@ services:
   #     - .:/app
   #   command: ['npm', 'run', 'test']
 
-  deploy:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '80:80'
+  # deploy:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - '80:80'
