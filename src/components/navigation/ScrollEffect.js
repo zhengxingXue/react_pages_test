@@ -19,7 +19,7 @@ export default function ScrollEffect(props) {
     children,
     ...other
   } = {
-    threshold: 30,
+    threshold: 50,
     elevationBefore: 0,
     elevationAfter: 2,
     bgColorBefore: 'white',
@@ -29,7 +29,7 @@ export default function ScrollEffect(props) {
     paddingBefore: '0.5rem',
     paddingAfter: '0',
     opacityBefore: 1,
-    opacityAfter: 0.9,
+    opacityAfter: 0.8,
     fadeIn: '0.5s ease-in',
     fadeOut: '0.5s ease-out',
     ...props,
