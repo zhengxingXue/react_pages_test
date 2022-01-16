@@ -16,7 +16,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Projects', 'Technologies', 'About'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -31,7 +31,7 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar position='static'>
-      <Container maxWidth='xl'>
+      <Container maxWidth='lg'>
         <Toolbar disableGutters>
           {/* xs layout, extra-small: 0px */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -83,7 +83,7 @@ const ResponsiveAppBar = () => {
             variant='h6'
             noWrap
             component='div'
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            sx={{ mr: 5, display: { xs: 'none', md: 'flex' } }}
           >
             LOGO
           </Typography>
@@ -93,7 +93,7 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, pr: 3, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
