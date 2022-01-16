@@ -1,15 +1,39 @@
 import React from 'react';
 
 // material-ui
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Button,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
   return (
-    <React.Fragment>
-      <AppBar position='static'>
-        <Toolbar disableGutters></Toolbar>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar>
+        <Toolbar>
+          <IconButton
+            size='large'
+            edge='start'
+            color='inherit'
+            aria-label='menu'
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          <Typography variant='h6' sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+
+          <Button color='inherit'>Login</Button>
+        </Toolbar>
       </AppBar>
-    </React.Fragment>
+    </Box>
   );
 };
 
