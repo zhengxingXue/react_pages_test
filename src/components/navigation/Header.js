@@ -26,10 +26,6 @@ const StyledAppBar = styled(AppBar)({
   backgroundColor: 'white',
 });
 
-const Offset = styled('div')(({ theme }) => ({
-  ...theme.mixins.toolbar,
-}));
-
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -126,7 +122,6 @@ const ResponsiveAppBar = () => {
           </Container>
         </StyledAppBar>
       </ScrollEffect>
-      <Offset />
     </React.Fragment>
   );
 };

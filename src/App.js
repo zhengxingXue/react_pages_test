@@ -15,7 +15,14 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      <Box sx={{ bgcolor: '#cfe8fc', height: '200vh' }} />
+      <Box
+        sx={{
+          minHeight: '200vh',
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg.jpg'})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      />
       {/* <Copyright /> */}
     </ThemeProvider>
   );
