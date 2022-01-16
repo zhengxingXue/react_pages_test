@@ -1,21 +1,21 @@
 import * as React from 'react';
 
 // material-ui
-import { Container, Typography, Box } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
 
 // project imports
-import Copyright from './ui/Copyright';
+import theme from './ui/Theme';
+import Header from './ui/Header';
+// import Copyright from './ui/Copyright';
 
 function App() {
   return (
-    <Container maxWidth='sm'>
-      <Box sx={{ my: 4 }}>
-        <Typography variant='h4' component='h1' align='center' gutterBottom>
-          Create React App example
-        </Typography>
-        <Copyright />
-      </Box>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Header />
+      {/* <Copyright /> */}
+    </ThemeProvider>
   );
 }
 

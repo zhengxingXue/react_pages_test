@@ -12,7 +12,6 @@ function Copyright() {
         Zhengxing Xue
       </Link>{' '}
       {new Date().getFullYear()}
-      {'.'}
     </Typography>
   );
 }
