@@ -11,8 +11,10 @@ import {
   Container,
   Button,
   MenuItem,
+  Link,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 
@@ -32,7 +34,6 @@ const ResponsiveAppBar = () => {
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           {/* xs layout, extra-small: 0px */}
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size='large'
@@ -78,7 +79,6 @@ const ResponsiveAppBar = () => {
           </Typography>
 
           {/* md layout, medium: 900px */}
-
           <Typography
             variant='h6'
             noWrap
@@ -99,6 +99,15 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
           </Box>
+
+          {/* Icons for external link, always on right */}
+          <IconButton
+            size='large'
+            color='inherit'
+            href='https://github.com/zhengxingXue/react_pages_test'
+          >
+            <GitHubIcon />
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
