@@ -1,14 +1,18 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+
+// material-ui
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Button,
+  MenuItem,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 
@@ -27,21 +31,11 @@ const ResponsiveAppBar = () => {
     <AppBar position='static'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <Typography
-            variant='h6'
-            noWrap
-            component='div'
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            LOGO
-          </Typography>
+          {/* xs layout, extra-small: 0px */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size='large'
-              aria-label='account of current user'
-              aria-controls='menu-appbar'
-              aria-haspopup='true'
               onClick={handleOpenNavMenu}
               color='inherit'
             >
@@ -73,6 +67,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+
           <Typography
             variant='h6'
             noWrap
@@ -81,6 +76,18 @@ const ResponsiveAppBar = () => {
           >
             LOGO
           </Typography>
+
+          {/* md layout, medium: 900px */}
+
+          <Typography
+            variant='h6'
+            noWrap
+            component='div'
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+          >
+            LOGO
+          </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -98,44 +105,3 @@ const ResponsiveAppBar = () => {
   );
 };
 export default ResponsiveAppBar;
-
-// import React from 'react';
-
-// // material-ui
-// import {
-//   AppBar,
-//   Box,
-//   Toolbar,
-//   IconButton,
-//   Typography,
-//   Button,
-// } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/Menu';
-
-// const Header = () => {
-//   return (
-//     <Box sx={{ flexGrow: 1 }}>
-//       <AppBar>
-//         <Toolbar>
-//           <IconButton
-//             size='large'
-//             edge='start'
-//             color='inherit'
-//             aria-label='menu'
-//             sx={{ mr: 2 }}
-//           >
-//             <MenuIcon />
-//           </IconButton>
-
-//           <Typography variant='h6' sx={{ flexGrow: 1 }}>
-//             News
-//           </Typography>
-
-//           <Button color='inherit'>Login</Button>
-//         </Toolbar>
-//       </AppBar>
-//     </Box>
-//   );
-// };
-
-// export default Header;
