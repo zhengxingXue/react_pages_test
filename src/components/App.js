@@ -1,7 +1,10 @@
 import * as React from 'react';
-import { Container, Typography } from '@mui/material';
-import { Box } from '@mui/material';
-import Copyright from './components/Copyright';
+
+// material-ui
+import { Container, Typography, Box } from '@mui/material';
+
+// project imports
+import Copyright from './ui/Copyright';
 
 function App() {
   return (
