@@ -16,6 +16,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
+const logo = 'Zhengxing Xue';
 const pages = ['Projects', 'Technologies', 'About'];
 
 const ResponsiveAppBar = () => {
@@ -75,7 +76,7 @@ const ResponsiveAppBar = () => {
             component='div'
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            LOGO
+            {logo}
           </Typography>
 
           {/* md layout, medium: 900px */}
@@ -85,7 +86,7 @@ const ResponsiveAppBar = () => {
             component='div'
             sx={{ mr: 5, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            {logo}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
