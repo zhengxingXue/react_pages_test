@@ -12,11 +12,17 @@ import {
   Button,
   MenuItem,
 } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 const logo = 'Zhengxing Xue';
 const pages = ['Projects', 'Technologies', 'About'];
+
+const StyledAppBar = styled(AppBar)({
+  boxShadow: 'none',
+  backgroundColor: 'transparent',
+});
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -30,9 +36,9 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position='static'>
+    <StyledAppBar position='fixed'>
       <Container maxWidth='lg'>
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ color: 'black' }}>
           {/* xs layout, extra-small: 0px */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -93,7 +99,7 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, mr: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, mr: 2, color: 'inherit', display: 'block' }}
               >
                 {page}
               </Button>
@@ -110,7 +116,7 @@ const ResponsiveAppBar = () => {
           </IconButton>
         </Toolbar>
       </Container>
-    </AppBar>
+    </StyledAppBar>
   );
 };
 export default ResponsiveAppBar;

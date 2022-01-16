@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // material-ui
-import CssBaseline from '@mui/material/CssBaseline';
+// import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 
 // project imports
@@ -12,7 +12,7 @@ import Header from './ui/Header';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <Header />
       {/* <Copyright /> */}
     </ThemeProvider>
