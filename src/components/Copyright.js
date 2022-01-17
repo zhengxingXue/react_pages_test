@@ -10,13 +10,20 @@ function Copyright() {
       spacing={0}
       sx={{ minHeight: '100vh' }}
     >
-      <Grid item xs={12}>
-        <Typography variant='h1' color='text.parimary'>
-          Hello World
-        </Typography>
+      <Grid container justifyContent='space-evenly' alignItems='center'>
+        <Grid item>
+          <Typography variant='h1' color='text.parimary'>
+            Hello
+          </Typography>
+        </Grid>
+        {/* <Grid item>
+          <Typography variant='h1' color='text.parimary'>
+            World
+          </Typography>
+        </Grid> */}
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item>
         <Typography variant='body2' color='text.secondary'>
           {'Copyright © '}
           <Link
