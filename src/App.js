@@ -8,7 +8,7 @@ import { ThemeProvider } from '@mui/material/styles';
 // project imports
 import theme from './components/Theme';
 import Header from './components/navigation/Header';
-// import Copyright from './ui/Copyright';
+import Copyright from './components/Copyright';
 
 function App() {
   return (
@@ -17,13 +17,13 @@ function App() {
       <Header />
       <Box
         sx={{
-          minHeight: '200vh',
+          minHeight: '100vh',
           backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg.jpg'})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
         }}
       />
-      {/* <Copyright /> */}
+      <Copyright />
     </ThemeProvider>
   );
 }
