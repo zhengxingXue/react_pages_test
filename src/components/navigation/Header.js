@@ -13,6 +13,8 @@ import {
   MenuItem,
   useMediaQuery,
   useTheme,
+  Tabs,
+  Tab,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -24,14 +26,37 @@ import ScrollEffect from './ScrollEffect';
 const logo = 'Zhengxing Xue';
 const pages = ['Projects', 'Technologies', 'About'];
 
+const StyledTabs = styled((props) => (
+  <Tabs {...props} TabIndicatorProps={{ style: { display: 'none' } }} />
+))({
+  marginRight: 'auto',
+});
+
+const StyledTab = styled((props) => <Tab disableRipple {...props} />)(() => ({
+  textTransform: 'none',
+  fontSize: '1rem',
+  color: 'rgba(0, 0, 0, 0.6)',
+  minWidth: 10,
+  marginLeft: '2rem',
+  '&.Mui-selected': {
+    color: '#000',
+  },
+}));
+
 const StyledAppBar = styled(AppBar)({
   backgroundColor: 'white',
 });
 
 const ResponsiveAppBar = () => {
+  const [tabValue, setTabValue] = React.useState(0);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+
   const theme = useTheme();
   const smallerThanMedium = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -52,17 +77,11 @@ const ResponsiveAppBar = () => {
         {logo}
       </Typography>
 
-      <Box sx={{ flexGrow: 1, display: 'flex' }}>
+      <StyledTabs value={tabValue} onChange={handleTabChange}>
         {pages.map((page) => (
-          <Button
-            key={page}
-            onClick={handleCloseNavMenu}
-            sx={{ my: 2, mr: 2, color: 'inherit', display: 'block' }}
-          >
-            {page}
-          </Button>
+          <StyledTab label={page} />
         ))}
-      </Box>
+      </StyledTabs>
     </React.Fragment>
   );
 
