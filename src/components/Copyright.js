@@ -7,7 +7,7 @@ function Copyright() {
       direction='column'
       justifyContent='center'
       alignItems='center'
-      spacing={2}
+      spacing={0}
       sx={{ minHeight: '100vh' }}
     >
       <Grid item xs={12}>
