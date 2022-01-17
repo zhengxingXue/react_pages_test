@@ -9,7 +9,6 @@ import {
   Typography,
   Menu,
   Container,
-  Button,
   MenuItem,
   useMediaQuery,
   useTheme,
@@ -24,7 +23,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ScrollEffect from './ScrollEffect';
 
 const logo = 'Zhengxing Xue';
-const pages = ['Projects', 'Technologies', 'About'];
+const pages = ['Home', 'Projects', 'Technologies', 'About'];
 
 const StyledTabs = styled((props) => (
   <Tabs {...props} TabIndicatorProps={{ style: { display: 'none' } }} />
@@ -35,7 +34,7 @@ const StyledTabs = styled((props) => (
 const StyledTab = styled((props) => <Tab disableRipple {...props} />)(() => ({
   textTransform: 'none',
   fontSize: '1rem',
-  color: 'rgba(0, 0, 0, 0.6)',
+  color: 'rgba(0, 0, 0, 0.3)',
   minWidth: 10,
   marginLeft: '2rem',
   '&.Mui-selected': {
@@ -79,7 +78,7 @@ const ResponsiveAppBar = () => {
 
       <StyledTabs value={tabValue} onChange={handleTabChange}>
         {pages.map((page) => (
-          <StyledTab label={page} />
+          <StyledTab label={page} key={page} />
         ))}
       </StyledTabs>
     </React.Fragment>
