@@ -34,7 +34,7 @@ const StyledTabs = styled((props) => (
 const StyledTab = styled((props) => <Tab disableRipple {...props} />)(() => ({
   textTransform: 'none',
   fontSize: '1rem',
-  color: 'rgba(0, 0, 0, 0.3)',
+  color: 'rgba(0, 0, 0, 0.5)',
   minWidth: 10,
   marginLeft: '2rem',
   '&.Mui-selected': {
