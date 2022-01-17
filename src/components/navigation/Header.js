@@ -42,10 +42,6 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(() => ({
   },
 }));
 
-const StyledAppBar = styled(AppBar)({
-  backgroundColor: 'white',
-});
-
 const ResponsiveAppBar = () => {
   const [tabValue, setTabValue] = React.useState(0);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -117,7 +113,7 @@ const ResponsiveAppBar = () => {
   return (
     <React.Fragment>
       <ScrollEffect>
-        <StyledAppBar position='fixed'>
+        <AppBar position='fixed'>
           <Container maxWidth='lg'>
             <Toolbar disableGutters>
               {smallerThanMedium ? mediumLowerLayout : mediumUpperLayout}
@@ -131,7 +127,7 @@ const ResponsiveAppBar = () => {
               </IconButton>
             </Toolbar>
           </Container>
-        </StyledAppBar>
+        </AppBar>
       </ScrollEffect>
     </React.Fragment>
   );
