@@ -3,14 +3,14 @@ import React from 'react';
 import { Typography } from '@mui/material';
 
 const Logo = (props) => {
-  const logoText = 'Zhengxing Xue';
+  const logoText = 'X';
 
   return (
     <Typography
-      variant='h6'
+      variant='h3'
       noWrap
       component='div'
-      sx={{ display: 'flex', ...props }}
+      sx={{ display: 'flex', fontFamily: 'Zen Tokyo Zoo', ...props }}
     >
       {logoText}
     </Typography>
