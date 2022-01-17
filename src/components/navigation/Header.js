@@ -21,8 +21,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 // project imports
 import ScrollEffect from './ScrollEffect';
+import Logo from './Logo';
 
-const logo = 'Zhengxing Xue';
 const pages = ['Home', 'Projects', 'Technologies', 'About'];
 
 const StyledTabs = styled((props) => (
@@ -67,14 +67,7 @@ const ResponsiveAppBar = () => {
 
   const mediumUpperLayout = (
     <React.Fragment>
-      <Typography
-        variant='h6'
-        noWrap
-        component='div'
-        sx={{ mr: 5, display: 'flex' }}
-      >
-        {logo}
-      </Typography>
+      <Logo mr={5} />
 
       <StyledTabs value={tabValue} onChange={handleTabChange}>
         {pages.map((page) => (
@@ -117,14 +110,7 @@ const ResponsiveAppBar = () => {
         </Menu>
       </Box>
 
-      <Typography
-        variant='h6'
-        noWrap
-        component='div'
-        sx={{ flexGrow: 1, display: 'flex' }}
-      >
-        {logo}
-      </Typography>
+      <Logo flexGrow={1} />
     </React.Fragment>
   );
 
