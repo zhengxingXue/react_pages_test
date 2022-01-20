@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Deployments
 
 - [Github Pages](https://zhengxingxue.github.io/react_pages_test/)
-- [AWS Elastic Beanstalk](http://reactpagestest-env.eba-wta3gvc2.us-east-1.elasticbeanstalk.com/)
+- (Deleted) AWS Elastic Beanstalk
 
 ## Available Scripts
 
