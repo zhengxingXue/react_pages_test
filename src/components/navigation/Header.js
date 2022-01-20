@@ -9,8 +9,11 @@ import {
   Typography,
   Menu,
   Container,
-  Button,
   MenuItem,
+  useMediaQuery,
+  useTheme,
+  Tabs,
+  Tab,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -18,16 +21,37 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 // project imports
 import ScrollEffect from './ScrollEffect';
+import Logo from './Logo';
 
-const logo = 'Zhengxing Xue';
-const pages = ['Projects', 'Technologies', 'About'];
+const pages = ['Home', 'Projects', 'Technologies', 'About'];
 
-const StyledAppBar = styled(AppBar)({
-  backgroundColor: 'white',
+const StyledTabs = styled((props) => (
+  <Tabs {...props} TabIndicatorProps={{ style: { display: 'none' } }} />
+))({
+  marginRight: 'auto',
 });
 
+const StyledTab = styled((props) => <Tab disableRipple {...props} />)(() => ({
+  textTransform: 'none',
+  fontSize: '1rem',
+  color: 'rgba(0, 0, 0, 0.5)',
+  minWidth: 10,
+  marginLeft: '2rem',
+  '&.Mui-selected': {
+    color: '#000',
+  },
+}));
+
 const ResponsiveAppBar = () => {
+  const [tabValue, setTabValue] = React.useState(0);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const theme = useTheme();
+  const smallerThanMedium = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,80 +61,63 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
+  const mediumUpperLayout = (
+    <React.Fragment>
+      <Logo mr={5} />
+
+      <StyledTabs value={tabValue} onChange={handleTabChange}>
+        {pages.map((page) => (
+          <StyledTab label={page} key={page} />
+        ))}
+      </StyledTabs>
+    </React.Fragment>
+  );
+
+  const mediumLowerLayout = (
+    <React.Fragment>
+      <Box sx={{ flexGrow: 1, display: 'flex' }}>
+        <IconButton size='large' onClick={handleOpenNavMenu} color='inherit'>
+          <MenuIcon />
+        </IconButton>
+
+        <Menu
+          id='menu-appbar'
+          anchorEl={anchorElNav}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+          open={Boolean(anchorElNav)}
+          onClose={handleCloseNavMenu}
+          sx={{
+            display: 'block',
+          }}
+        >
+          {pages.map((page) => (
+            <MenuItem key={page} onClick={handleCloseNavMenu}>
+              <Typography textAlign='center'>{page}</Typography>
+            </MenuItem>
+          ))}
+        </Menu>
+      </Box>
+
+      <Logo flexGrow={1} />
+    </React.Fragment>
+  );
+
   return (
     <React.Fragment>
       <ScrollEffect>
-        <StyledAppBar position='fixed'>
+        <AppBar position='fixed'>
           <Container maxWidth='lg'>
-            <Toolbar disableGutters sx={{ color: 'black' }}>
-              {/* xs layout, extra-small: 0px */}
-              <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                <IconButton
-                  size='large'
-                  onClick={handleOpenNavMenu}
-                  color='inherit'
-                >
-                  <MenuIcon />
-                </IconButton>
-
-                <Menu
-                  id='menu-appbar'
-                  anchorEl={anchorElNav}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left',
-                  }}
-                  open={Boolean(anchorElNav)}
-                  onClose={handleCloseNavMenu}
-                  sx={{
-                    display: { xs: 'block', md: 'none' },
-                  }}
-                >
-                  {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign='center'>{page}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu>
-              </Box>
-
-              <Typography
-                variant='h6'
-                noWrap
-                component='div'
-                sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-              >
-                {logo}
-              </Typography>
-
-              {/* md layout, medium: 900px */}
-              <Typography
-                variant='h6'
-                noWrap
-                component='div'
-                sx={{ mr: 5, display: { xs: 'none', md: 'flex' } }}
-              >
-                {logo}
-              </Typography>
-
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                {pages.map((page) => (
-                  <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, mr: 2, color: 'inherit', display: 'block' }}
-                  >
-                    {page}
-                  </Button>
-                ))}
-              </Box>
-
-              {/* Icons for external link, always on right */}
+            <Toolbar disableGutters>
+              {smallerThanMedium ? mediumLowerLayout : mediumUpperLayout}
+              {/* github link icon */}
               <IconButton
                 size='large'
                 color='inherit'
@@ -120,7 +127,7 @@ const ResponsiveAppBar = () => {
               </IconButton>
             </Toolbar>
           </Container>
-        </StyledAppBar>
+        </AppBar>
       </ScrollEffect>
     </React.Fragment>
   );

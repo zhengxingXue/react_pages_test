@@ -22,7 +22,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "PUBLIC_URL=. react-scripts start",
+    "start": "PUBLIC_URL=. react-scripts start --host 0.0.0.0",
     "build": "react-scripts build",
     "build-nginx": "PUBLIC_URL=. react-scripts build",
     "test": "react-scripts test",
